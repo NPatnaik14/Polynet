@@ -1,0 +1,21 @@
+Operating point:               top 35% by score in this corpus (score >= 0.78)
+Sentences analysed:            10
+Candidate word instances:      63
+Flagged ambiguous instances:   23 (36.5%)
+  - Inter-Domain:              5
+  - Intra-Domain:              18
+
+Top 15 most frequently flagged ambiguous words:
+word
+date       6
+provide    4
+time       3
+stamp      2
+note       1
+allow      1
+range      1
+leave      1
+record     1
+create     1
+report     1
+sign       1

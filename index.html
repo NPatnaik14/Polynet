@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requirements Ambiguity Detection Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --accent-primary: #2bc4b8;
+      --accent-secondary: #e8935a;
+      --accent-purple: #8b5cf6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --badge-inter: #0284c7;
+      --badge-intra: #d97706;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 50px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-bottom: 1px solid var(--card-border);
+      padding: 2rem 3rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .header-content h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-content h1 span.badge {
+      background: rgba(43, 196, 184, 0.15);
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .header-content p {
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-size: 0.95rem;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Metric Cards Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .metric-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-primary);
+    }
+    .metric-card .title {
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .metric-card .value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 8px;
+      color: #ffffff;
+    }
+    .metric-card .subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .text-primary { color: var(--accent-primary) !important; }
+    .text-secondary { color: var(--accent-secondary) !important; }
+    .text-purple { color: var(--accent-purple) !important; }
+    .text-success { color: var(--success) !important; }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Layout Grid for Charts */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 850px) {
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+    .chart-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .chart-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .chart-box h4 {
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+    th {
+      background-color: rgba(15, 23, 42, 0.8);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .badge-tag {
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .badge-inter { background: rgba(2, 132, 199, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-intra { background: rgba(217, 119, 6, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+    .badge-none { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; }
+    .badge-pass { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .badge-fail { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+    /* Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent-primary);
+      color: #0f172a;
+      border-color: var(--accent-primary);
+      font-weight: 600;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>
+        Inter- & Intra-Domain Ambiguity Detection Framework
+        <span class="badge">Prelim v1.0</span>
+      </h1>
+      <p>Automated Polysemous Word & Contextual Domain Conflict Identification in Software Requirements</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- KPI Summary Grid -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="title">Gold Set F1 Score</div>
+        <div class="value text-primary">0.94</div>
+        <div class="subtitle">Threshold @ 0.10 (Precision: 0.89, Recall: 1.00)</div>
+      </div>
+      <div class="metric-card">
+        <div class="title">Gold Set Accuracy</div>
+        <div class="value text-success">91.3%</div>
+        <div class="subtitle">Binary Detection (17 TP, 4 TN, 2 FP, 0 FN)</div>
+      </div>
+      <div class="metric-card">
+        <div class="title">Corpus Requirements</div>
+        <div class="value text-purple">400</div>
+        <div class="subtitle">Sampled from PURE Dataset</div>
+      </div>
+      <div class="metric-card">
+        <div class="title">Flagged Ambiguity</div>
+        <div class="value text-secondary">640</div>
+        <div class="subtitle">30.1% of 2,128 Candidate Instances</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('sample')">PURE Corpus Sample (400 Requirements)</button>
+      <button class="tab-btn" onclick="switchTab('gold')">Gold Benchmark Evaluation (23 Triples)</button>
+      <button class="tab-btn" onclick="switchTab('test')">Demo Test Set (10 Requirements)</button>
+    </div>
+
+    <!-- TAB 1: PURE Corpus Output -->
+    <div id="tab-sample" class="tab-content active">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">📊 Analysis Visualizations (PURE Corpus Sample)</div>
+        </div>
+        <div class="charts-grid">
+          <div class="chart-box">
+            <h4>Ambiguity Type Distribution</h4>
+            <img src="sample_output/summary_ambiguity_type_counts.png" alt="Ambiguity Type Counts">
+          </div>
+          <div class="chart-box">
+            <h4>Domain Distribution of Flagged Words</h4>
+            <img src="sample_output/summary_domain_distribution.png" alt="Domain Distribution">
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">🔥 Top Flagged Ambiguous Words</div>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Word</th>
+                <th>Flagged Count</th>
+                <th>Primary Domain Impact</th>
+                <th>Typical Conflict Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><b>care</b></td><td>27</td><td>Healthcare</td><td>Intra-Domain (care team vs. care plan)</td></tr>
+              <tr><td>2</td><td><b>order</b></td><td>24</td><td>Healthcare / Software</td><td>Inter-Domain (medication order vs. sequence order)</td></tr>
+              <tr><td>3</td><td><b>section</b></td><td>21</td><td>General / IT</td><td>Intra-Domain (UI section vs. document section)</td></tr>
+              <tr><td>4</td><td><b>cover</b></td><td>19</td><td>Healthcare / Finance</td><td>Inter-Domain (insurance cover vs. visual cover)</td></tr>
+              <tr><td>5</td><td><b>provide</b></td><td>17</td><td>General / IT</td><td>Intra-Domain (system provision vs. provider)</td></tr>
+              <tr><td>6</td><td><b>support</b></td><td>16</td><td>Software / IT</td><td>Intra-Domain (technical support vs. system feature support)</td></tr>
+              <tr><td>7</td><td><b>day</b></td><td>15</td><td>General / IT</td><td>Intra-Domain (calendar day vs. system runtime day)</td></tr>
+              <tr><td>8</td><td><b>time</b></td><td>13</td><td>Software / IT</td><td>Intra-Domain (timestamp vs. duration time)</td></tr>
+              <tr><td>9</td><td><b>date</b></td><td>12</td><td>Software / IT</td><td>Intra-Domain (calendar date vs. data value)</td></tr>
+              <tr><td>10</td><td><b>program</b></td><td>12</td><td>Software / IT</td><td>Inter-Domain (software program vs. medical program)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Gold Set Evaluation -->
+    <div id="tab-gold" class="tab-content">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">🎯 Gold Standard Benchmark Results</div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+          Evaluating algorithm performance against 23 manually annotated requirement-word pairs across Healthcare, Software/IT, and General domain concepts.
+        </p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Target Word</th>
+                <th>Requirement Sentence</th>
+                <th>Gold Label</th>
+                <th>Predicted Label</th>
+                <th>Ambiguity Score</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>record</td><td>The system shall create a single patient record for each patient.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.832</td><td><span class="badge-tag badge-fail">Mismatch</span></td></tr>
+              <tr><td>chart</td><td>The physician shall be able to view the patient chart from any workstation.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.550</td><td><span class="badge-tag badge-fail">Mismatch</span></td></tr>
+              <tr><td>note</td><td>The system shall provide the ability to cosign a note and record the date and time of signature.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.867</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>order</td><td>The system shall allow the physician to enter a new medication order for the patient.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.978</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>plan</td><td>The system shall allow the care team to update the patient's care plan.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.641</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>code</td><td>The system shall allow the coder to assign a diagnosis code to the encounter.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.553</td><td><span class="badge-tag badge-fail">Mismatch</span></td></tr>
+              <tr><td>provider</td><td>The system shall display the name of the provider who signed the note.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.619</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>table</td><td>The system shall store the reference ranges in a lookup table.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.721</td><td><span class="badge-tag badge-fail">Mismatch</span></td></tr>
+              <tr><td>system</td><td>The system shall allow the user to update the patient's demographic information.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.570</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>port</td><td>The device shall expose a serial port for data export to external systems.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.704</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>solution</td><td>The vendor shall propose a software solution that meets all functional requirements.</td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.747</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>session</td><td>The user shall log in to the system using a valid session key.</td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.615</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>key</td><td>Each record shall be uniquely identified using a primary key.</td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.984</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>field</td><td>The system shall validate that the required field is not left blank on the form.</td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.982</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>log</td><td>The system shall maintain an audit log of all user login attempts.</td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.496</td><td><span class="badge-tag badge-fail">Mismatch</span></td></tr>
+              <tr><td>service</td><td>The system shall expose a web service for retrieving patient records.</td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.949</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>review</td><td>The system shall allow the physician to review the patient's allergy list.</td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td><span class="badge-tag badge-intra">Intra-Domain</span></td><td>0.666</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>patient</td><td>The system shall display the patient's date of birth on the summary screen.</td><td><span class="badge-tag badge-none">None</span></td><td><span class="badge-tag badge-none">None</span></td><td>0.000</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>physician</td><td>The physician shall be able to sign the note electronically.</td><td><span class="badge-tag badge-none">None</span></td><td><span class="badge-tag badge-none">None</span></td><td>0.000</td><td><span class="badge-tag badge-pass">MATCH</span></td></tr>
+              <tr><td>capability</td><td>The system shall provide the capability to print a summary of the visit.</td><td><span class="badge-tag badge-none">None</span></td><td><span class="badge-tag badge-inter">Inter-Domain</span></td><td>0.596</td><td><span class="badge-tag badge-fail">Mismatch</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: Demo Test Set -->
+    <div id="tab-test" class="tab-content">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">🧪 Demo Test Set Output (10 Requirements)</div>
+        </div>
+        <div class="charts-grid">
+          <div class="chart-box">
+            <h4>Test Set Ambiguity Type Counts</h4>
+            <img src="testset_output/summary_ambiguity_type_counts.png" alt="Test Set Counts">
+          </div>
+          <div class="chart-box">
+            <h4>Test Set Domain Distribution</h4>
+            <img src="testset_output/summary_domain_distribution.png" alt="Test Set Domain Distribution">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      
+      document.getElementById('tab-' + tabId).className = 'tab-content';
+      event.target.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>

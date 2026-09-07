@@ -1,0 +1,24 @@
+Operating point:               top 30% by score in this corpus (score >= 0.75)
+Sentences analysed:            400
+Candidate word instances:      2128
+Flagged ambiguous instances:   640 (30.1%)
+  - Inter-Domain:              214
+  - Intra-Domain:              426
+
+Top 15 most frequently flagged ambiguous words:
+word
+care         27
+order        24
+section      21
+cover        19
+provide      17
+support      16
+day          15
+time         13
+date         12
+program      12
+product      11
+record       10
+change        9
+reference     9
+allow         8

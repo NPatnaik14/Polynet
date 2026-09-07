@@ -1,0 +1,252 @@
+word,surface_form,sentence,sentence_domain,ambiguity_score,semantic_similarity_spread,contextual_confidence_gap,domain_diversity,is_ambiguous,ambiguity_type,top_sense_1_domain,top_sense_1_gloss,top_sense_2_domain,top_sense_2_gloss,explanation
+system,system,The system shall provide the ability to record the user ID and date of all updates to the problem or diagnosis list,Healthcare,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+provide,provide,The system shall provide the ability to record the user ID and date of all updates to the problem or diagnosis list,Healthcare,0.721,0.84,0.5,0.5,False,None,General,take measures in preparation for,,,"The word ""provide"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [General] take measures in preparation for (context similarity=0.08)
+  Candidate sense 2: [General] make a possibility or provide opportunity for; permit to be attainable or cause to remain (context similarity=0.06)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+record,record,The system shall provide the ability to record the user ID and date of all updates to the problem or diagnosis list,Healthcare,0.742,0.981,0.3,0.5,False,None,Healthcare,make a record of; set down in permanent form,,,"The word ""record"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Healthcare] make a record of; set down in permanent form (context similarity=0.09)
+  Candidate sense 2: [Healthcare] register electronically (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+user,user,The system shall provide the ability to record the user ID and date of all updates to the problem or diagnosis list,Healthcare,0.519,0.744,0.1,0.0,False,None,Software/IT,a person who takes drugs,,,"The word ""user"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] a person who takes drugs (context similarity=0.15)
+  Candidate sense 2: [Software/IT] a person who makes use of a thing; someone who uses or employs something (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+date,date,The system shall provide the ability to record the user ID and date of all updates to the problem or diagnosis list,Healthcare,0.845,0.977,0.6,0.0,True,Intra-Domain,Software/IT,a participant in a date,Software/IT,a particular but unspecified point in time,"The word ""date"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] a participant in a date (context similarity=0.15)
+  Candidate sense 2: [Software/IT] a particular but unspecified point in time (context similarity=0.14)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+problem,problem,The system shall provide the ability to record the user ID and date of all updates to the problem or diagnosis list,Healthcare,0.649,0.945,0.1,0.0,False,None,Healthcare,a source of difficulty,,,"The word ""problem"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Healthcare] a source of difficulty (context similarity=0.10)
+  Candidate sense 2: [Healthcare] a state of difficulty that needs to be resolved (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+user,user,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.519,0.744,0.1,0.0,False,None,Software/IT,a person who takes drugs,,,"The word ""user"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a person who takes drugs (context similarity=0.14)
+  Candidate sense 2: [Software/IT] a person who makes use of a thing; someone who uses or employs something (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+date,date,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.832,0.956,0.6,0.5,True,Intra-Domain,Software/IT,a particular but unspecified point in time,Software/IT,the present,"The word ""date"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a particular but unspecified point in time (context similarity=0.20)
+  Candidate sense 2: [Software/IT] the present (context similarity=0.18)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+time,time,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.913,0.973,0.8,0.0,True,Intra-Domain,Software/IT,a reading of a point in time as given by a clock,Software/IT,a period of time considered as a resource under your control and sufficient to accomplish something,"The word ""time"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a reading of a point in time as given by a clock (context similarity=0.15)
+  Candidate sense 2: [Software/IT] a period of time considered as a resource under your control and sufficient to accomplish something (context similarity=0.14)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+stamp,stamp,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.865,0.954,0.7,1.0,True,Inter-Domain,Software/IT,a type or class,Healthcare,a symbol that is the result of printing or engraving,"The word ""stamp"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a type or class (context similarity=0.11)
+  Candidate sense 2: [Healthcare] a symbol that is the result of printing or engraving (context similarity=0.10)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""Healthcare"")."
+record,recorded,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.105,0.0,0.3,0.0,False,None,Healthcare,register electronically,,,"The word ""record"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Healthcare] register electronically (context similarity=0.11)
+  Candidate sense 2: [Healthcare] make a record of; set down in permanent form (context similarity=0.00)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+review,reviewed,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.657,0.849,0.3,0.0,False,None,Software/IT,"look back upon (a period of time, sequence of events); remember",,,"The word ""review"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] look back upon (a period of time, sequence of events); remember (context similarity=0.11)
+  Candidate sense 2: [Software/IT] refresh one's memory (context similarity=0.08)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+option,option,The user ID and date or time stamp shall be recorded when the allergies reviewed option is selected,Software/IT,0.602,0.872,0.1,1.0,False,None,General,one of a number of things from which only one can be chosen,,,"The word ""option"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] one of a number of things from which only one can be chosen (context similarity=0.13)
+  Candidate sense 2: [Finance/Business] the right to buy or sell property at an agreed price; the right is purchased and if it is not exercised by a stated date the money is forfeited (context similarity=0.10)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Finance/Business"")."
+system,system,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+provide,provide,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.821,0.994,0.5,0.5,True,Intra-Domain,General,take measures in preparation for,General,make a possibility or provide opportunity for; permit to be attainable or cause to remain,"The word ""provide"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [General] take measures in preparation for (context similarity=0.10)
+  Candidate sense 2: [General] make a possibility or provide opportunity for; permit to be attainable or cause to remain (context similarity=0.10)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+note,note,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.856,0.941,0.7,1.0,True,Inter-Domain,Healthcare,a promise to pay a specified amount on demand or at a certain time,General,a brief written record,"The word ""note"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Healthcare] a promise to pay a specified amount on demand or at a certain time (context similarity=0.23)
+  Candidate sense 2: [General] a brief written record (context similarity=0.21)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Healthcare"" vs. ""General"")."
+record,record,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.742,0.981,0.3,0.5,False,None,Healthcare,make a record of; set down in permanent form,,,"The word ""record"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Healthcare] make a record of; set down in permanent form (context similarity=0.11)
+  Candidate sense 2: [Healthcare] register electronically (context similarity=0.11)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+date,date,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.832,0.956,0.6,0.5,True,Intra-Domain,Software/IT,a particular but unspecified point in time,Software/IT,the present,"The word ""date"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] a particular but unspecified point in time (context similarity=0.25)
+  Candidate sense 2: [Software/IT] the present (context similarity=0.23)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+time,time,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.927,0.996,0.8,0.0,True,Intra-Domain,Software/IT,a period of time considered as a resource under your control and sufficient to accomplish something,Software/IT,a suitable moment,"The word ""time"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] a period of time considered as a resource under your control and sufficient to accomplish something (context similarity=0.18)
+  Candidate sense 2: [Software/IT] a suitable moment (context similarity=0.18)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+signature,signature,The system shall provide the ability to cosign a note and record the date and time of signature,Healthcare,0.709,0.929,0.3,0.0,False,None,Software/IT,the sharps or flats that follow the clef and indicate the key,,,"The word ""signature"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] the sharps or flats that follow the clef and indicate the key (context similarity=0.16)
+  Candidate sense 2: [Software/IT] a melody used to identify a performer or a dance band or radio/tv program (context similarity=0.14)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+system,system,The system shall provide the ability to record that patient specific instructions or educational material were provided to the patient,Healthcare,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+provide,provide,The system shall provide the ability to record that patient specific instructions or educational material were provided to the patient,Healthcare,0.78,0.931,0.5,0.5,True,Intra-Domain,Software/IT,give something useful or necessary to,Software/IT,"give what is desired or needed, especially support, food or sustenance","The word ""provide"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] give something useful or necessary to (context similarity=0.11)
+  Candidate sense 2: [Software/IT] give what is desired or needed, especially support, food or sustenance (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+record,record,The system shall provide the ability to record that patient specific instructions or educational material were provided to the patient,Healthcare,0.742,0.981,0.3,0.5,False,None,Healthcare,make a record of; set down in permanent form,,,"The word ""record"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Healthcare] make a record of; set down in permanent form (context similarity=0.08)
+  Candidate sense 2: [Healthcare] register electronically (context similarity=0.08)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+instruction,instructions,The system shall provide the ability to record that patient specific instructions or educational material were provided to the patient,Healthcare,0.692,0.957,0.2,0.5,False,None,Software/IT,(computer science) a line of code written as part of a computer program,,,"The word ""instruction"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] (computer science) a line of code written as part of a computer program (context similarity=0.10)
+  Candidate sense 2: [General] the activities of educating or instructing; activities that impart knowledge or skill (context similarity=0.09)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""General"")."
+material,material,The system shall provide the ability to record that patient specific instructions or educational material were provided to the patient,Healthcare,0.671,0.87,0.3,0.5,False,None,General,information (data or ideas or observations) that can be used or reworked into a finished form,,,"The word ""material"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [General] information (data or ideas or observations) that can be used or reworked into a finished form (context similarity=0.15)
+  Candidate sense 2: [Healthcare] a person judged suitable for admission or employment (context similarity=0.12)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Healthcare"")."
+provide,provided,The system shall provide the ability to record that patient specific instructions or educational material were provided to the patient,Healthcare,0.78,0.931,0.5,0.5,True,Intra-Domain,Software/IT,give something useful or necessary to,Software/IT,"give what is desired or needed, especially support, food or sustenance","The word ""provide"" appears in a sentence whose detected domain is ""Healthcare"".
+  Candidate sense 1: [Software/IT] give something useful or necessary to (context similarity=0.11)
+  Candidate sense 2: [Software/IT] give what is desired or needed, especially support, food or sustenance (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+system,system,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.245,0.0,0.7,0.5,False,None,Software/IT,a group of physiologically or anatomically related organs or parts,,,"The word ""system"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a group of physiologically or anatomically related organs or parts (context similarity=0.08)
+  Candidate sense 2: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""General"")."
+provide,provide,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.821,0.994,0.5,0.5,True,Intra-Domain,General,take measures in preparation for,General,make a possibility or provide opportunity for; permit to be attainable or cause to remain,"The word ""provide"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] take measures in preparation for (context similarity=0.08)
+  Candidate sense 2: [General] make a possibility or provide opportunity for; permit to be attainable or cause to remain (context similarity=0.08)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+record,record,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.742,0.981,0.3,0.5,False,None,Healthcare,make a record of; set down in permanent form,,,"The word ""record"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Healthcare] make a record of; set down in permanent form (context similarity=0.09)
+  Candidate sense 2: [Healthcare] register electronically (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+user,user,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.519,0.744,0.1,0.0,False,None,Software/IT,a person who takes drugs,,,"The word ""user"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a person who takes drugs (context similarity=0.15)
+  Candidate sense 2: [Software/IT] a person who makes use of a thing; someone who uses or employs something (context similarity=0.09)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+date,date,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.832,0.956,0.6,0.5,True,Intra-Domain,Software/IT,a particular but unspecified point in time,Software/IT,the present,"The word ""date"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a particular but unspecified point in time (context similarity=0.21)
+  Candidate sense 2: [Software/IT] the present (context similarity=0.19)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+time,time,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.913,0.973,0.8,0.0,True,Intra-Domain,Software/IT,a reading of a point in time as given by a clock,Software/IT,a period of time considered as a resource under your control and sufficient to accomplish something,"The word ""time"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a reading of a point in time as given by a clock (context similarity=0.16)
+  Candidate sense 2: [Software/IT] a period of time considered as a resource under your control and sufficient to accomplish something (context similarity=0.15)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+stamp,stamp,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.865,0.954,0.7,1.0,True,Inter-Domain,Software/IT,a type or class,Healthcare,a symbol that is the result of printing or engraving,"The word ""stamp"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a type or class (context similarity=0.12)
+  Candidate sense 2: [Healthcare] a symbol that is the result of printing or engraving (context similarity=0.11)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""Healthcare"")."
+relate,related,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.547,0.681,0.3,1.0,False,None,Finance/Business,give an account of,,,"The word ""relate"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Finance/Business] give an account of (context similarity=0.18)
+  Candidate sense 2: [Software/IT] be in a relationship with (context similarity=0.09)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Finance/Business"" vs. ""Software/IT"")."
+event,events,The system shall provide the ability to record user ID and date or time stamp for all referral related events,Software/IT,0.395,0.5,0.2,0.0,False,None,General,something that happens at a given place and time,,,"The word ""event"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] something that happens at a given place and time (context similarity=0.04)
+  Candidate sense 2: [General] a phenomenon located at a single point in space-time; the fundamental observational entity in relativity theory (context similarity=0.03)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+system,system,The system shall allow authorized users to update the directory,Software/IT,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+allow,allow,The system shall allow authorized users to update the directory,Software/IT,0.926,0.994,0.8,1.0,True,Inter-Domain,Software/IT,allow the other (baseball) team to score,General,allow the presence of or allow (an activity) without opposing or prohibiting,"The word ""allow"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] allow the other (baseball) team to score (context similarity=0.18)
+  Candidate sense 2: [General] allow the presence of or allow (an activity) without opposing or prohibiting (context similarity=0.18)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""General"")."
+user,users,The system shall allow authorized users to update the directory,Software/IT,0.36,0.5,0.1,0.0,False,None,Software/IT,a person who makes use of a thing; someone who uses or employs something,,,"The word ""user"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a person who makes use of a thing; someone who uses or employs something (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a person who uses something or someone selfishly or unethically (context similarity=0.00)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+update,update,The system shall allow authorized users to update the directory,Software/IT,0.663,0.965,0.1,0.5,False,None,Software/IT,bring to the latest state of technology,,,"The word ""update"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] bring to the latest state of technology (context similarity=0.13)
+  Candidate sense 2: [General] bring up to date; supply with recent information (context similarity=0.12)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""General"")."
+system,system,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+provide,provide,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.721,0.84,0.5,0.5,False,None,General,take measures in preparation for,,,"The word ""provide"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] take measures in preparation for (context similarity=0.07)
+  Candidate sense 2: [General] make a possibility or provide opportunity for; permit to be attainable or cause to remain (context similarity=0.05)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+generate,generate,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.377,0.473,0.2,0.5,False,None,Software/IT,produce (energy),,,"The word ""generate"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] produce (energy) (context similarity=0.15)
+  Candidate sense 2: [Finance/Business] give or supply (context similarity=0.05)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""Finance/Business"")."
+output,output,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.469,0.561,0.3,0.0,False,None,General,signal that comes out of an electronic system,,,"The word ""output"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] signal that comes out of an electronic system (context similarity=0.17)
+  Candidate sense 2: [General] what is produced in a given time period (context similarity=0.07)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+date,date,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.845,0.977,0.6,0.0,True,Intra-Domain,Software/IT,a participant in a date,Software/IT,a particular but unspecified point in time,"The word ""date"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a participant in a date (context similarity=0.23)
+  Candidate sense 2: [Software/IT] a particular but unspecified point in time (context similarity=0.22)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+date,date,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.845,0.977,0.6,0.0,True,Intra-Domain,Software/IT,a participant in a date,Software/IT,a particular but unspecified point in time,"The word ""date"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] a participant in a date (context similarity=0.23)
+  Candidate sense 2: [Software/IT] a particular but unspecified point in time (context similarity=0.22)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+range,range,The system shall provide the ability to generate hardcopy and electronic output by date possibly and possibly date range,Software/IT,0.888,0.989,0.7,0.0,True,Intra-Domain,Software/IT,the limits within which something can be effective,Software/IT,a variety of different things or activities,"The word ""range"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] the limits within which something can be effective (context similarity=0.10)
+  Candidate sense 2: [Software/IT] a variety of different things or activities (context similarity=0.10)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+system,system,The system shall provide the ability to export structured data which removes those identifiers listed in the HIPAA definition of a limited dataset,Legal/Regulatory,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""Legal/Regulatory"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+provide,provide,The system shall provide the ability to export structured data which removes those identifiers listed in the HIPAA definition of a limited dataset,Legal/Regulatory,0.721,0.84,0.5,0.5,False,None,General,take measures in preparation for,,,"The word ""provide"" appears in a sentence whose detected domain is ""Legal/Regulatory"".
+  Candidate sense 1: [General] take measures in preparation for (context similarity=0.07)
+  Candidate sense 2: [General] make a possibility or provide opportunity for; permit to be attainable or cause to remain (context similarity=0.05)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+export,export,The system shall provide the ability to export structured data which removes those identifiers listed in the HIPAA definition of a limited dataset,Legal/Regulatory,0.605,0.877,0.1,0.5,False,None,Software/IT,transfer (electronic data) out of a database or document in a format that can be used by other programs,,,"The word ""export"" appears in a sentence whose detected domain is ""Legal/Regulatory"".
+  Candidate sense 1: [Software/IT] transfer (electronic data) out of a database or document in a format that can be used by other programs (context similarity=0.15)
+  Candidate sense 2: [Finance/Business] sell or transfer abroad (context similarity=0.12)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""Finance/Business"")."
+remove,removes,The system shall provide the ability to export structured data which removes those identifiers listed in the HIPAA definition of a limited dataset,Legal/Regulatory,0.535,0.5,0.6,0.0,False,None,Software/IT,"remove something concrete, as by lifting, pushing, or taking off, or remove something abstract",,,"The word ""remove"" appears in a sentence whose detected domain is ""Legal/Regulatory"".
+  Candidate sense 1: [Software/IT] remove something concrete, as by lifting, pushing, or taking off, or remove something abstract (context similarity=0.00)
+  Candidate sense 2: [Software/IT] remove from a position or an office (context similarity=0.00)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+identifier,identifiers,The system shall provide the ability to export structured data which removes those identifiers listed in the HIPAA definition of a limited dataset,Legal/Regulatory,0.325,0.5,0.0,0.0,False,None,Healthcare,a symbol that establishes the identity of the one bearing it,,,"The word ""identifier"" appears in a sentence whose detected domain is ""Legal/Regulatory"".
+  Candidate sense 1: [Healthcare] a symbol that establishes the identity of the one bearing it (context similarity=0.00)
+Not flagged as ambiguous in this context."
+list,listed,The system shall provide the ability to export structured data which removes those identifiers listed in the HIPAA definition of a limited dataset,Legal/Regulatory,0.713,0.935,0.3,0.0,False,None,Healthcare,include in a list,,,"The word ""list"" appears in a sentence whose detected domain is ""Legal/Regulatory"".
+  Candidate sense 1: [Healthcare] include in a list (context similarity=0.07)
+  Candidate sense 2: [Healthcare] cause to lean to the side (context similarity=0.06)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+output,output,This export on hardcopy and electronic output shall leave the actual PHI data unmodified in the original record,Software/IT,0.469,0.561,0.3,0.0,False,None,General,signal that comes out of an electronic system,,,"The word ""output"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [General] signal that comes out of an electronic system (context similarity=0.19)
+  Candidate sense 2: [General] what is produced in a given time period (context similarity=0.07)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+leave,leave,This export on hardcopy and electronic output shall leave the actual PHI data unmodified in the original record,Software/IT,0.823,0.727,1.0,0.0,True,Intra-Domain,Software/IT,leave unchanged or undisturbed or refrain from taking,Software/IT,go away from a place,"The word ""leave"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Software/IT] leave unchanged or undisturbed or refrain from taking (context similarity=0.17)
+  Candidate sense 2: [Software/IT] go away from a place (context similarity=0.10)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+record,record,This export on hardcopy and electronic output shall leave the actual PHI data unmodified in the original record,Software/IT,0.836,0.964,0.6,0.0,True,Intra-Domain,Healthcare,the sum of recognized accomplishments,Healthcare,a compilation of the known facts regarding something or someone,"The word ""record"" appears in a sentence whose detected domain is ""Software/IT"".
+  Candidate sense 1: [Healthcare] the sum of recognized accomplishments (context similarity=0.11)
+  Candidate sense 2: [Healthcare] a compilation of the known facts regarding something or someone (context similarity=0.10)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Healthcare"" domain but represent distinct concepts."
+system,system,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.57,0.5,0.7,0.5,False,None,General,instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity,,,"The word ""system"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [General] instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity (context similarity=0.00)
+  Candidate sense 2: [Software/IT] a group of independent but interrelated elements comprising a unified whole (context similarity=0.00)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""General"" vs. ""Software/IT"")."
+provide,provide,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.721,0.84,0.5,0.5,False,None,General,take measures in preparation for,,,"The word ""provide"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [General] take measures in preparation for (context similarity=0.06)
+  Candidate sense 2: [General] make a possibility or provide opportunity for; permit to be attainable or cause to remain (context similarity=0.05)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+create,create,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.79,0.999,0.4,0.5,True,Intra-Domain,Software/IT,create by artistic means,Software/IT,make or cause to be or to become,"The word ""create"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [Software/IT] create by artistic means (context similarity=0.11)
+  Candidate sense 2: [Software/IT] make or cause to be or to become (context similarity=0.11)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""Software/IT"" domain but represent distinct concepts."
+report,report,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.793,0.95,0.5,0.0,True,Intra-Domain,General,a written document describing the findings of some individual or group,General,a written evaluation of a student's scholarship and deportment,"The word ""report"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [General] a written document describing the findings of some individual or group (context similarity=0.12)
+  Candidate sense 2: [General] a written evaluation of a student's scholarship and deportment (context similarity=0.11)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+summary,summary,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.487,0.696,0.1,0.5,False,None,Software/IT,performed speedily and without formality,,,"The word ""summary"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [Software/IT] performed speedily and without formality (context similarity=0.18)
+  Candidate sense 2: [Finance/Business] a brief statement that presents the main points in a concise form (context similarity=0.10)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Software/IT"" vs. ""Finance/Business"")."
+information,information,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.538,0.666,0.3,0.0,False,None,General,(communication theory) a numerical measure of the uncertainty of an outcome,,,"The word ""information"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [General] (communication theory) a numerical measure of the uncertainty of an outcome (context similarity=0.12)
+  Candidate sense 2: [General] a message received and understood (context similarity=0.06)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+procedure,procedures,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.07,0.0,0.2,0.0,False,None,General,"a set sequence of steps, part of larger computer program",,,"The word ""procedure"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [General] a set sequence of steps, part of larger computer program (context similarity=0.05)
+  Candidate sense 2: [General] a particular course of action intended to achieve a result (context similarity=0.00)
+Classified as INTRA-DOMAIN ambiguity: the top two candidate senses both belong to the ""General"" domain but represent distinct concepts."
+sign,signs,The system shall provide the ability to create hardcopy and electronic report summary information (procedures  medications  labs  immunizations  allergies  and vital signs),General,0.852,0.826,0.9,0.5,True,Inter-Domain,Healthcare,a perceptible indication of something not immediately apparent (as a visible clue that something has happened),Software/IT,a public display of a message,"The word ""sign"" appears in a sentence whose detected domain is ""General"".
+  Candidate sense 1: [Healthcare] a perceptible indication of something not immediately apparent (as a visible clue that something has happened) (context similarity=0.10)
+  Candidate sense 2: [Software/IT] a public display of a message (context similarity=0.07)
+Classified as INTER-DOMAIN ambiguity: the top two candidate senses belong to different application domains (""Healthcare"" vs. ""Software/IT"")."
